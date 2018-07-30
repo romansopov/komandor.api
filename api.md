@@ -10,34 +10,6 @@
 }
 ```
 
-Коды ошибок
-
-* CommonError - Общая (неизвестная) ошибка
-* DataError - Ошибка при получении данных
-* MethodNotFound - Метод не найден
-* AuthenticationFailed - Ошибка аутентификации
-* NeedAuthentication - Требуется аутентификация
-* SessionExpired - Срок действия сессии истек
-* CertificateExpired - Срок действия сертификата истек
-* IncorrectCode - Некорректный код подтверждения
-* NeedRegisterPhone - Требуется указать мобильный телефон
-* PhoneAlreadyRegistered - Телефон уже зарегистрирован
-* WrongPassword - Некорректный пароль
-* WrongContainer - Некорректный контейнер
-* InvalidSchema - Ошибка проверки схемы запроса
-* InvalidSignature - Недействительная подпись
-* InvalidCertificate - Некорректный или недействительный сертификат
-* InvalidResponse - Некорректный ответ
-* SimpleSign - Ошибка простой подписи
-* CryptoError - Ошибка крипто-модуля
-* EncryptError - Ошибка шифрования
-* DecryptError - Ошибка дешифрования
-* NetworkError - Ошибка сети
-* SMSError - Ошибка отправки СМС
-* CreateChatError - Ошибка создания чата
-* CreateChatKeysError - Ошибка создания ключей чата
-* GetChatsError - Ошибка получения чатов
-
 ### Аутентификация
 
 ```
@@ -314,3 +286,29 @@ SOCKET unsubscribe
 ```js
 socket.emit('subscribe', '91ec6ed7-aced-4251-bb01-55debd90ddb6')
 ```
+
+Ответ:
+
+```json
+{
+  "id": 123,
+  "chat": "91ec6ed7-aced-4251-bb01-55debd90ddb6",
+  "pid": 123,
+  "cid": 123,
+  "user": "ФИО",
+  "data": "base64",
+  "sign": "base64",
+  "cms": "base64",
+  "type": "txt",
+  "file": "6d3cb099-4462-4d8d-b5e4-55b42a337b63"
+}
+```
+
+- `id` - Идентификатор сообщения
+- `chat` - Идентификатор чата
+- `pid` - Идентификатор профиля отправителя сообщения
+- `cid` - Идентификатор сертификата отправителя сообщения для проверки подписи
+- `sign` - Простая подпись
+- `cms` - CMS подпись
+- `type` - Тип сообщения
+- `file` - Идентификатор файла для скачивания
