@@ -10,6 +10,33 @@
 }
 ```
 
+### Коды ошибок
+* CommonError - Общая (неизвестная) ошибка
+* DataError - Ошибка при получении данных
+* MethodNotFound - Метод не найден
+* AuthenticationFailed - Ошибка аутентификации
+* NeedAuthentication - Требуется аутентификация
+* SessionExpired - Срок действия сессии истек
+* CertificateExpired - Срок действия сертификата истек
+* IncorrectCode - Некорректный код подтверждения
+* NeedRegisterPhone - Требуется указать мобильный телефон
+* PhoneAlreadyRegistered - Телефон уже зарегистрирован
+* WrongPassword - Некорректный пароль
+* WrongContainer - Некорректный контейнер
+* InvalidSchema - Ошибка проверки схемы запроса
+* InvalidSignature - Недействительная подпись
+* InvalidCertificate - Некорректный или недействительный сертификат
+* InvalidResponse - Некорректный ответ
+* SimpleSign - Ошибка простой подписи
+* CryptoError - Ошибка крипто-модуля
+* EncryptError - Ошибка шифрования
+* DecryptError - Ошибка дешифрования
+* NetworkError - Ошибка сети
+* SMSError - Ошибка отправки СМС
+* CreateChatError - Ошибка создания чата
+* CreateChatKeysError - Ошибка создания ключей чата
+* GetChatsError - Ошибка получения чатов
+
 ### Аутентификация
 
 ```
