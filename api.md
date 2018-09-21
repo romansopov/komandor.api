@@ -141,7 +141,7 @@ JSON /api/confirmPhone/
 {
   "token": "99b082c6-979b-4646-9e85-60f30b1c37a7",
   "id": 1234,
-  "code": 987654
+  "code": "987654"
 }
 ```
 
