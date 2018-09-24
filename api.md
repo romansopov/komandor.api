@@ -176,6 +176,7 @@ JSON /api/profile/
     "snils": "12345678901",
     "phone": "79991234567",
     "photo": "base64:AAAAA=",
+    "email": "user@name.com",
     "billing": {
       "balance": 299.00
     },
