@@ -54,6 +54,7 @@
 * CreateChatKeysError - Ошибка создания ключей чата
 * GetChatsError - Ошибка получения чатов
 * PayRegister - Ошибка регистрации платежа
+* TariffNotFound - Тариф не найден
 * InvalidImageType - Некорректный тип изображения (фото профиля)
 
 ### Аутентификация
@@ -196,7 +197,9 @@ JSON /api/profile/
     "photo": "base64:AAAAA=",
     "email": "user@name.com",
     "billing": {
-      "balance": 299.00
+      "balance": 299.00,
+      "premium": 1,
+      "expiration": 1564149288
     },
     "certificates": [{
       "id": 22,
@@ -509,6 +512,41 @@ JSON /api/file/
   "content": "base64"
 }
 ```
+
+### Статусы сообщений
+
+Обновление статусов
+
+```
+JSON /api/updateStatus/
+```
+
+Запрос:
+
+```json
+{
+  "token": "99b082c6-979b-4646-9e85-60f30b1c37a7",
+  "ids": [1, 2, 3],
+  "status": 1
+}
+```
+
+- `ids` - Массив id сообщений
+- `status ` - Статус: 1 - Отправлено на сервер, 2 - Доставлено на устройство, 3 - Прочитано
+
+Событие в сокет "status"
+
+```json
+{
+  chatId: i.chatId,
+  messageId: parseInt(i.messageId),
+  status: status
+}
+```
+
+- `chatId` - Идентификатор сообщения
+- `messageId ` - Идентификатор чата
+- `status ` - Статус
 
 ### PUSH FCM
 
