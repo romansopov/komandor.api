@@ -538,9 +538,9 @@ JSON /api/updateStatus/
 
 ```json
 {
-  chatId: i.chatId,
-  messageId: parseInt(i.messageId),
-  status: status
+  "chatId": "91ec6ed7-aced-4251-bb01-55debd90ddb6",
+  "messageId": 1,
+  "status": 2
 }
 ```
 
